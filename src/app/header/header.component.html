@@ -1,0 +1,19 @@
+<header class="menu-font-large">
+    <div>
+        <div id="logo-container">
+            <h1><span class="logo-fat">Web</span><span class="logo-thin">shop</span></h1>
+        </div>
+        <nav id="main-nav">
+            <ul>
+                <li><a>Categoriën</a></li>
+                <li><a>Wishlist</a></li>
+            </ul>
+        </nav>
+        <nav id="cart-placeholder"><!-- nav cart component --><a (click)="openCart()">Winkelwagentje</a></nav>
+        <div id="search-placeholder"><!-- searchbar component --></div>
+    </div>
+    <section id="cart-container" [ngClass]="{'cart-open': cartOpen, 'cart-closed': !cartOpen}"></section>
+</header>
+
+
+
