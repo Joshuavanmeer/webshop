@@ -7,11 +7,15 @@ export class HttpService {
     private sub: any;
 
 
+    display(res) {
+        console.log(res, 'and so forth')
+    }
+
     constructor(private currentUserService: CurrentUserService) {
 
-        this.sub = this.currentUserService.wishList$.subscribe(
-            val => console.log(val)
-        );
+        this.sub = this.currentUserService.wishList$.subscribe(res => {
+            console.log(res);
+        })
 
     }
 

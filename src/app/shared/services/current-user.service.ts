@@ -1,30 +1,44 @@
 import { Injectable } from '@angular/core';
-import { WishList } from "../classes/wishlist";
+import { User } from "../classes/user";
 import { ShoppingCart } from "../classes/shoppingcart";
+import { WishList } from "../classes/wishlist";
+
+import { Subject } from "rxjs";
 import 'rxjs/Rx';
-import { BehaviorSubject } from "rxjs";
 import 'rxjs/add/operator/scan';
 
 @Injectable()
 export class CurrentUserService {
 
+    private user: User
 
-    private wishList: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+
+
+
+
+    private wishList: Subject<any> = new Subject<any>();
     private shoppingCart: ShoppingCart;
+    sub: any;
 
     wishList$;
 
-    addToCart(): void {
-        console.log('add to cart');
-        this.wishList$.next(20);
-        console.log(this.wishList$);
+
+
+
+    createDummyUser(): void {
+        this.user = new User();
     }
 
 
 
 
     constructor() {
-        this.wishList$ = this.wishList.scan((acc, cur) => acc + cur);
+        this.wishList$ = this.wishList.scan((acc, cur) => acc + cur * 3);
+
+        // this.sub = this.wishList$.subscribe(res => {
+        //     console.log(res);
+        // })
+
     }
 
 
