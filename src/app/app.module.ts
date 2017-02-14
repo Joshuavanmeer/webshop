@@ -5,18 +5,22 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { CurrentUserService } from "./shared/services/current-user.service";
+import { HttpService } from "./shared/services/http-service";
+import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    ShoppingcartComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [HttpService, CurrentUserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
