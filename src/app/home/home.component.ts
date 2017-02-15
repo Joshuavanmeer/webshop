@@ -9,10 +9,7 @@ import { CurrentUserService } from "../shared/services/current-user.service";
 export class HomeComponent implements OnInit {
 
 
-    addToCart(): void {
-        const id = '-Kd0CMuU_tgmY33z_ZBX';
-        this.currentUserService.addToCart(id);
-    }
+
 
     constructor(
         private currentUserService: CurrentUserService

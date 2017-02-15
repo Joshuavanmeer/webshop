@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Response, Http, Headers } from "@angular/http";
 import { Observable } from "rxjs";
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class HttpService {
@@ -22,9 +23,7 @@ export class HttpService {
 
     // builds url to send data to
     getData (type: string) {
-        console.log(type)
         const url = this[type + 'Url'];
-        console.log(url);
         return this.get(url);
     }
 

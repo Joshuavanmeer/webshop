@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import 'rxjs/Rx';
-import 'rxjs/add/operator/map';
-import { CurrentUserService } from "../shared/services/current-user.service";
-import { HttpService } from "../shared/services/http.service";
+
 
 
 
@@ -25,8 +22,6 @@ export class HeaderComponent implements OnInit {
 
 
     constructor(
-        private currentUserService: CurrentUserService,
-        private httpService: HttpService
     ) {}
 
     ngOnInit() {

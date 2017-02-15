@@ -18,8 +18,8 @@ export abstract class AbstractList {
 
 
     // retrieves a product based on its id
-    getProduct (id: string): Product {
-        return this.list.filter(item => item.id === id);
+    getProduct (id: string): any {
+        // return this.list.filter(item => item.id === id);
     }
 
 

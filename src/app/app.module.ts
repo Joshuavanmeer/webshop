@@ -12,12 +12,14 @@ import { HttpService } from "./shared/services/http.service";
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { ProductsService } from "./shared/services/products.service";
 import { routing } from "./shared/routing/app.routing";
+import { ProductUiComponent } from './product-ui/product-ui.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
-        ShoppingcartComponent
+        ShoppingcartComponent,
+        ProductUiComponent
     ],
     imports: [
         routing,
