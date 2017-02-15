@@ -30,6 +30,13 @@ export class CurrentUserService {
 
 
 
+    addToWishList (product: any): void {
+        this.wishList.addProduct(product);
+        console.log(this.wishList);
+    }
+
+
+
     // allowes components to connect to current user data
     connect (type: string): any {
         return this[type];
@@ -52,9 +59,8 @@ export class CurrentUserService {
                     res.city,
                     res.phoneNumber
                 );
-                this.shoppingCart = new ShoppingCart(res.shoppingCart);
-                console.log(res.shoppingCart);
-                this.wishList = new WishList(res.wishList);
+                this.shoppingCart = new ShoppingCart();
+                this.wishList = new WishList();
             }
         );
     }

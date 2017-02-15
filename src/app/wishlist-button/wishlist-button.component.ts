@@ -3,7 +3,7 @@ import { Input, Output } from "@angular/core/src/metadata/directives";
 
 @Component({
     selector: 'ws-wishlist-button',
-    template: './wishlist-button.component.html',
+    templateUrl: './wishlist-button.component.html',
     styles: [`
         
         .on-wishlist {
@@ -22,7 +22,6 @@ export class WishListButtonComponent implements OnInit {
     private handleClick(ev): void {
         const target = ev.target;
         if (target.classList.contains('add-to-wishlist-btn')) {
-            console.log(' df')
             this.addToWishList.emit(ev);
         }
     }

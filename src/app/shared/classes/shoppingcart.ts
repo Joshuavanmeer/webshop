@@ -3,11 +3,14 @@ import { AbstractList } from "./abstractlist";
 export class ShoppingCart extends AbstractList {
 
     private totalPrice: number;
-    private data: any;
 
-    constructor(obj) {
+    constructor() {
         super();
-        this.data = obj;
+    }
+
+
+    getTotalPrice ():number {
+        return 1;
     }
 
 }
