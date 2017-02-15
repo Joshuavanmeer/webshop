@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import { CurrentUserService } from "../shared/services/current-user.service";
-import { HttpService } from "../shared/services/http-service";
+import { HttpService } from "../shared/services/http.service";
 
 
 

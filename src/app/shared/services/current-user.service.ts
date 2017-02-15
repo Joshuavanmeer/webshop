@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from "../classes/user";
-import { HttpService } from "./http-service";
+import { HttpService } from "./http.service";
 
 
 @Injectable()
@@ -19,7 +19,7 @@ export class CurrentUserService {
 
     // creates a single user to emulate a logged in user
     createDummyUser(): void {
-        this.httpService.getUserData().subscribe(
+        this.httpService.getData('users').subscribe(
             res => {
                 this.user = new User(
                     '-Kd0DbIcXZJgKajr99Dw',

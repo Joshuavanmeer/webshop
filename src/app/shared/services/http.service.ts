@@ -9,7 +9,7 @@ export class HttpService {
     private header: Headers = new Headers({'Content-type': 'application/json'});
     private usersUrl: string = 'https://ng-webshop.firebaseio.com/users';
     private cartUrl: string = 'https://ng-webshop.firebaseio.com/users';
-    private productUrl: string = 'https://ng-webshop.firebaseio.com/products.json';
+    private productsUrl: string = 'https://ng-webshop.firebaseio.com/products.json';
 
 
 
@@ -21,14 +21,16 @@ export class HttpService {
 
 
     // builds url to send data to
-    getUserData () {
-        const url = this.usersUrl;
-        return this.getData(url);
+    getData (type: string) {
+        console.log(type)
+        const url = this[type + 'Url'];
+        console.log(url);
+        return this.get(url);
     }
 
 
 
-    private getData(url: string): Observable<any> {
+    private get(url: string): Observable<any> {
         return this.http.get(url)
             .map((res: Response) => res.json());
     }

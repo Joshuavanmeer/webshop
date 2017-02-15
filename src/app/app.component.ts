@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {CurrentUserService} from "./shared/services/current-user.service";
+import { CurrentUserService } from "./shared/services/current-user.service";
+import { ProductsService } from "./shared/services/products.service";
 
 @Component({
   selector: 'ws-root',
@@ -8,11 +9,15 @@ import {CurrentUserService} from "./shared/services/current-user.service";
 })
 export class AppComponent implements OnInit {
 
-    constructor(private currentUserService: CurrentUserService) {}
+    constructor(
+        private currentUserService: CurrentUserService,
+        private productsService: ProductsService
+    ) {}
 
 
     ngOnInit() {
         this.currentUserService.init();
+        this.productsService.init();
     }
 
 }
