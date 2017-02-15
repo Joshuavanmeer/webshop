@@ -4,7 +4,13 @@ import { Input } from "@angular/core/src/metadata/directives";
 @Component({
   selector: 'ws-shoppingcart-button',
   templateUrl: './shoppingcart-button.component.html',
-  styleUrls: ['./shoppingcart-button.component.css']
+  styles: [`
+        
+        .in-shoppingcart {
+            background: yellow;
+        }
+        
+    `]
 })
 export class ShoppingCartButtonComponent implements OnInit {
 

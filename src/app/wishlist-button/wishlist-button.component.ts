@@ -2,9 +2,15 @@ import { Component, OnInit, EventEmitter } from '@angular/core';
 import { Input, Output } from "@angular/core/src/metadata/directives";
 
 @Component({
-  selector: 'ws-wishlist-button',
-  templateUrl: './wishlist-button.component.html',
-  styleUrls: ['./wishlist-button.component.css']
+    selector: 'ws-wishlist-button',
+    template: './wishlist-button.component.html',
+    styles: [`
+        
+        .on-wishlist {
+            background: yellow;
+        }
+        
+    `]
 })
 export class WishListButtonComponent implements OnInit {
 
