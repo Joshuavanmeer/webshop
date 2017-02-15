@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from "@angular/core/src/metadata/directives";
-import {CurrentUserService} from "../shared/services/current-user.service";
+import { CurrentUserService } from "../shared/services/current-user.service";
 
 @Component({
   selector: 'ws-product',
@@ -10,8 +10,6 @@ import {CurrentUserService} from "../shared/services/current-user.service";
 export class ProductComponent implements OnInit {
 
     @Input() private productDetails: any;
-    @Input() private inShoppingCart: boolean = false;
-    @Input() private onWishList: boolean = false;
 
 
 

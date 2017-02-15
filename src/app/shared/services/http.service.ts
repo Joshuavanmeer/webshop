@@ -59,6 +59,19 @@ export class HttpService {
         // }).subscribe(res => {
         //     console.log(res);
         // });
+
+        // this.post(this.productsUrl, {
+        //     name: 'Rowing machine',
+        //     desc: 'Sweet rowing machine bro',
+        //     price: 299.99,
+        //     category: 'health',
+        //     sku: 'unit',
+        //     stock: 10,
+        // }).subscribe(res => {
+        //     console.log(res);
+        // });
+
+
     }
 
 

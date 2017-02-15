@@ -30,6 +30,7 @@ export class ProductsService {
                 keyId,
                 product.name,
                 product.desc,
+                product.category,
                 product.price,
                 product.sku,
                 product.stock

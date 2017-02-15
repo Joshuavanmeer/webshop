@@ -10,6 +10,8 @@ export class CurrentUserService {
     private user: User;
 
 
+
+    // creates a dummy user
     init (): void {
         this.httpService.setUser('-Kd0DbIcXZJgKajr99Dw');
         this.createDummyUser();
@@ -42,6 +44,11 @@ export class CurrentUserService {
 
     addToCart (product: any): void {
         this.user.addToCart(product);
+    }
+
+    // return current users cart
+    getCart(): any {
+
     }
 
 
