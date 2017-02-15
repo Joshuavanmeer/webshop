@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { User } from "../classes/user";
 import { HttpService } from "./http.service";
+import { ShoppingCart } from "../classes/shoppingcart";
+import { WishList } from "../classes/wishlist";
 
 
 @Injectable()
@@ -8,6 +10,8 @@ export class CurrentUserService {
 
 
     private user: User;
+    private shoppingCart: ShoppingCart;
+    private wishList: WishList;
 
 
 
@@ -15,6 +19,20 @@ export class CurrentUserService {
     init (): void {
         this.httpService.setUser('-Kd0DbIcXZJgKajr99Dw');
         this.createDummyUser();
+    }
+
+
+
+    addToShoppingCart (product: any): void {
+        this.shoppingCart.addProduct(product);
+        console.log(this.shoppingCart);
+    }
+
+
+
+    // allowes components to connect to current user data
+    connect (type: string): any {
+        return this[type];
     }
 
 
@@ -32,24 +50,16 @@ export class CurrentUserService {
                     res.streetNumberAddition,
                     res.zipCode,
                     res.city,
-                    res.phoneNumber,
-                    res.wishList,    // populates users wishlist instance
-                    res.shoppingCart // populates users shoppingcart instance
+                    res.phoneNumber
                 );
+                this.shoppingCart = new ShoppingCart(res.shoppingCart);
+                console.log(res.shoppingCart);
+                this.wishList = new WishList(res.wishList);
             }
         );
     }
 
 
-
-    addToCart (product: any): void {
-        this.user.addToCart(product);
-    }
-
-    // return current users cart
-    getCart(): any {
-
-    }
 
 
 

@@ -17,9 +17,13 @@ export class ProductsService {
 
 
 
-    get(): Product[] {
-        return this.products;
+    get(id?: string): Product[] {
+        if (!id) return this.products;
+        else {
+            return this.products.filter(product => product.id === id);
+        }
     }
+
 
 
     // transforms product database data

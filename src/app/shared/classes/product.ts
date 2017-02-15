@@ -1,7 +1,7 @@
 export class Product {
 
     constructor(
-        private id: string,
+        public id: string,
         private name: string,
         private desc: string,
         private category: string,

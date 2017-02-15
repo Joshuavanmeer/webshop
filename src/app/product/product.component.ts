@@ -22,7 +22,6 @@ export class ProductComponent implements OnInit {
     constructor(private currentUserService: CurrentUserService) { }
 
     ngOnInit() {
-        console.log(this.productDetails.id);
     }
 
 }

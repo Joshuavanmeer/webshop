@@ -1,2 +1,4 @@
-<button [ngClass]="{ 'in-shoppingcart': inShoppingCart }">Add to cart</button>
-<button [ngClass]="{ 'on-wishlist': onWishList }">On wishlist</button>
+<div (click)="handleClick($event)">
+    <button class="add-to-shoppingcart-btn" [ngClass]="{ 'in-shoppingcart': inShoppingCart }">Add to cart</button>
+    <button class="add-to-wishlist-btn"[ngClass]="{ 'on-wishlist': onWishList }">On wishlist</button>
+</div>

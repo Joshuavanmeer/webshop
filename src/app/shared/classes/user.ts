@@ -1,11 +1,5 @@
-import { ShoppingCart } from "./shoppingcart";
-import { WishList } from "./wishlist";
-
 
 export class User {
-
-    private wishList: WishList = new WishList();
-    private shoppingCart: ShoppingCart  = new ShoppingCart();
 
     constructor(
         private id: string,
@@ -16,23 +10,12 @@ export class User {
         private streetNumberAddition: string,
         private zipCode: string,
         private city: string,
-        private phoneNumber: string,
-        wishListObj,
-        shoppingCartObj
-    ) {
-        this.shoppingCart.populateList(shoppingCartObj);
-        this.wishList.populateList(wishListObj);
-    }
+        private phoneNumber: string
+    ) { }
 
 
+    getDetails () {}
 
-    addToCart(productId: string): void {
-        console.log('added something to this users cart bro');
-    }
-
-
-    log () {
-        this.wishList.log();
-    }
+    updateDetails () {}
 
 }

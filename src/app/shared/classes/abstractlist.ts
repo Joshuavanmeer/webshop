@@ -4,7 +4,7 @@ export abstract class AbstractList {
 
 
     // holds a list of products
-    list: any[] = [];
+    list: Product[] = [];
 
 
     populateList (obj) {
