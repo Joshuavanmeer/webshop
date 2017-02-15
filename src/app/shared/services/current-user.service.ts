@@ -1,47 +1,53 @@
 import { Injectable } from '@angular/core';
 import { User } from "../classes/user";
-import { ShoppingCart } from "../classes/shoppingcart";
-import { WishList } from "../classes/wishlist";
+import { HttpService } from "./http-service";
 
-import { Subject } from "rxjs";
-import 'rxjs/Rx';
-import 'rxjs/add/operator/scan';
 
 @Injectable()
 export class CurrentUserService {
 
-    private user: User
+
+    private user: User;
+
+
+    init (): void {
+        this.httpService.setUser('-Kd0DbIcXZJgKajr99Dw');
+        this.createDummyUser();
+    }
 
 
 
-
-
-    private wishList: Subject<any> = new Subject<any>();
-    private shoppingCart: ShoppingCart;
-    sub: any;
-
-    wishList$;
-
-
-
-
+    // creates a single user to emulate a logged in user
     createDummyUser(): void {
-        this.user = new User();
+        this.httpService.getUserData().subscribe(
+            res => {
+                this.user = new User(
+                    '-Kd0DbIcXZJgKajr99Dw',
+                    res.firstName,
+                    res.lastName,
+                    res.streetName,
+                    res.streetNumber,
+                    res.streetNumberAddition,
+                    res.zipCode,
+                    res.city,
+                    res.phoneNumber,
+                    res.wishList,    // populates users wishlist instance
+                    res.shoppingCart // populates users shoppingcart instance
+                );
+            }
+        );
     }
 
 
 
-
-    constructor() {
-        this.wishList$ = this.wishList.scan((acc, cur) => acc + cur * 3);
-
-        // this.sub = this.wishList$.subscribe(res => {
-        //     console.log(res);
-        // })
-
+    addToCart (product: any): void {
+        this.user.addToCart(product);
     }
 
 
 
+    constructor(
+        private httpService: HttpService
+    ) { }
 
 }

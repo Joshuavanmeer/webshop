@@ -1,4 +1,11 @@
-import { Product } from './product';
+import { AbstractList } from "./abstractlist";
 
-export class ShoppingCart {
+export class ShoppingCart extends AbstractList {
+
+    private price: number;
+
+    constructor() {
+        super();
+    }
+
 }
