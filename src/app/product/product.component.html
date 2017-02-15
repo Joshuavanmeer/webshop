@@ -6,4 +6,6 @@
         <p class="category">{{productDetails.category}}</p>
         <p class="price">{{productDetails.price}}</p>
     </figure>
+    <ws-shoppingcart-button (addToCart)="addToCart($event)"></ws-shoppingcart-button>
+    <ws-wishlist-button (addToWishList)="addToWishList($event)"></ws-wishlist-button>
 </div>

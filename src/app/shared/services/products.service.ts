@@ -17,7 +17,7 @@ export class ProductsService {
 
 
 
-    get(id?: string): Product[] {
+    get (id?: string): Product[] {
         if (!id) return this.products;
         else {
             return this.products.filter(product => product.id === id);

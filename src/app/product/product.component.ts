@@ -13,8 +13,14 @@ export class ProductComponent implements OnInit {
 
 
 
-    addToCart(): void {
+    addToCart (ev): void {
         // this.currentUserService.addToCart()
+        console.log(ev);
+    }
+
+
+    addToWishList (ev): void {
+        console.log(ev);
     }
 
 
