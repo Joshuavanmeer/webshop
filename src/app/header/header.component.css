@@ -16,7 +16,6 @@ nav#main-nav, nav#cart-placeholder, ul, li, header div {
 
 nav#main-nav {
     height: 100%;
-    margin-left: auto;
 }
 
 
@@ -24,6 +23,10 @@ header {
     background: #17baa9;
     padding: 0 0 0 20px;
     height: 80px;
+}
+
+header div {
+    justify-content: space-between;
 }
 
 
@@ -73,7 +76,6 @@ li:first-child {
     height: 100%;
     background: red;
     order: 2;
-    margin-left: auto;
 }
 
 
@@ -102,11 +104,11 @@ li:first-child {
     padding: 100px 20px 20px;
     color: black;
     width: 300px;
-    height: 100%;
-    z-index: -1;
+    height: calc(100% - 80px);
+    z-index: 999;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 80px;
     transform-origin: right;
     opacity: 1;
 }

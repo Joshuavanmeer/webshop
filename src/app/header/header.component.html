@@ -3,15 +3,14 @@
         <div id="logo-container">
             <h1><span class="logo-fat">Web</span><span class="logo-thin">shop</span></h1>
         </div>
+        <div id="search-placeholder"><!-- searchbar component --></div>
         <nav id="main-nav">
             <ul>
                 <li><a>My account</a></li>
                 <li><a>WS</a></li>
-                <li><a (click)="openCart()">SC</a></li>
+                <li><a (click)="openCart()"><img src="./assets/img/shopping-cart.svg"></a></li>
             </ul>
         </nav>
-        <nav id="cart-placeholder"><!-- nav cart component --><a >Shoppingcart</a></nav>
-        <div id="search-placeholder"><!-- searchbar component --></div>
     </div>
     <section id="cart-container" [ngClass]="{'cart-open': cartOpen, 'cart-closed': !cartOpen}">
         <ws-products-minified></ws-products-minified>
