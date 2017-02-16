@@ -1,17 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule} from "@angular/common";
-import { ProductsComponent} from "./products.component";
-import { ProductComponent } from "../product/product.component";
-import { ShoppingCartButtonComponent } from "../shoppingcart-button/shoppingcart-button.component";
-import { WishListButtonComponent } from "../wishlist-button/wishlist-button.component";
+import { ProductsComponent } from "./products.component";
+import {SharedProductModule} from "../shared/modules/shared-product.module";
 
 @NgModule({
-    imports: [CommonModule],
+    imports: [CommonModule, SharedProductModule],
     declarations: [
-        ProductsComponent,
-        ProductComponent,
-        ShoppingCartButtonComponent,
-        WishListButtonComponent
+        ProductsComponent
     ],
     exports: [ProductsComponent],
     providers: []

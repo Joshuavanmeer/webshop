@@ -2,6 +2,10 @@
     position: absolute;
 }
 
+* {
+    transition: all .2s;
+}
+
 
 nav#main-nav, nav#cart-placeholder, ul, li, header div {
     display: flex;
@@ -87,13 +91,16 @@ li:first-child {
 
 
 .cart-closed {
-    transform: scaleX(.05);
+    transform: scaleX(0);
+    opacity: 0;
 }
 
 
 
 #cart-container {
-    background: black;
+    background: beige;
+    padding: 100px 20px 20px;
+    color: black;
     width: 300px;
     height: 100%;
     z-index: -1;
@@ -101,6 +108,7 @@ li:first-child {
     right: 0;
     top: 0;
     transform-origin: right;
+    opacity: 1;
 }
 
 

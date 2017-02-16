@@ -12,6 +12,9 @@ import { HttpService } from "./shared/services/http.service";
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { ProductsService } from "./shared/services/products.service";
 import { routing } from "./shared/routing/app.routing";
+import {WishListButtonComponent} from "./wishlist-button/wishlist-button.component";
+import {ShoppingCartButtonComponent} from "./shoppingcart-button/shoppingcart-button.component";
+import {ProductComponent} from "./product/product.component";
 
 @NgModule({
     declarations: [

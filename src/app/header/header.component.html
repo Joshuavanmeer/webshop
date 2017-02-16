@@ -12,7 +12,9 @@
         <nav id="cart-placeholder"><!-- nav cart component --><a (click)="openCart()">Shoppingcart</a></nav>
         <div id="search-placeholder"><!-- searchbar component --></div>
     </div>
-    <section id="cart-container" [ngClass]="{'cart-open': cartOpen, 'cart-closed': !cartOpen}"></section>
+    <section id="cart-container" [ngClass]="{'cart-open': cartOpen, 'cart-closed': !cartOpen}">
+        <ws-products-minified></ws-products-minified>
+    </section>
 </header>
 
 
