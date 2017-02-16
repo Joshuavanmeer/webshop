@@ -3,6 +3,7 @@ import { User } from "../classes/user";
 import { HttpService } from "./http.service";
 import { ShoppingCart } from "../classes/shoppingcart";
 import { WishList } from "../classes/wishlist";
+import {Subject} from "rxjs";
 
 
 @Injectable()
@@ -10,8 +11,9 @@ export class CurrentUserService {
 
 
     private user: User;
-    private shoppingCart: ShoppingCart;
-    private wishList: WishList;
+    private shoppingCart: ShoppingCart = new ShoppingCart();
+    private wishList: WishList = new WishList();
+    private asyncData: Subject<any> = new Subject<any>();
 
 
 
@@ -25,6 +27,7 @@ export class CurrentUserService {
 
     addToShoppingCart (product: any): void {
         this.shoppingCart.addProduct(product);
+        this.httpService.addToShoppingCart(product);
         console.log(this.shoppingCart);
     }
 
@@ -32,7 +35,16 @@ export class CurrentUserService {
 
     addToWishList (product: any): void {
         this.wishList.addProduct(product);
+        this.httpService.addToWishList(product);
         console.log(this.wishList);
+    }
+
+
+
+    // returns a subject to subscribe to
+    // which will indicate async data has been pulled in
+    asyncDataReady (): Subject<any> {
+        return this.asyncData;
     }
 
 
@@ -59,13 +71,12 @@ export class CurrentUserService {
                     res.city,
                     res.phoneNumber
                 );
-                this.shoppingCart = new ShoppingCart();
-                this.wishList = new WishList();
+                this.wishList.populateList(res.wishList);
+                this.shoppingCart.populateList(res.shoppingCart);
+                this.asyncData.next();
             }
         );
     }
-
-
 
 
 

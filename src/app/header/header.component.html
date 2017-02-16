@@ -5,11 +5,12 @@
         </div>
         <nav id="main-nav">
             <ul>
-                <li><a>Categoriën</a></li>
-                <li><a>Wishlist</a></li>
+                <li><a>My account</a></li>
+                <li><a>WS</a></li>
+                <li><a (click)="openCart()">SC</a></li>
             </ul>
         </nav>
-        <nav id="cart-placeholder"><!-- nav cart component --><a (click)="openCart()">Shoppingcart</a></nav>
+        <nav id="cart-placeholder"><!-- nav cart component --><a >Shoppingcart</a></nav>
         <div id="search-placeholder"><!-- searchbar component --></div>
     </div>
     <section id="cart-container" [ngClass]="{'cart-open': cartOpen, 'cart-closed': !cartOpen}">

@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Response, Http, Headers } from "@angular/http";
 import { Observable } from "rxjs";
+import { Product } from "../classes/product";
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class HttpService {
 
     private userId: string;
+    private usersUrl: string;
+    private shoppingCartUrl: string;
+    private wishListUrl: string;
     private header: Headers = new Headers({'Content-type': 'application/json'});
-    private usersUrl: string = 'https://ng-webshop.firebaseio.com/users';
-    private cartUrl: string = 'https://ng-webshop.firebaseio.com/users';
     private productsUrl: string = 'https://ng-webshop.firebaseio.com/products.json';
 
 
@@ -17,14 +19,33 @@ export class HttpService {
     // sets and builds urls for service to connect to db
     setUser (id: string) {
         this.userId = id;
-        this.usersUrl += '/' + this.userId + '.json';
+        this.usersUrl = `https://ng-webshop.firebaseio.com/users/${this.userId}.json`;
+        this.shoppingCartUrl = `https://ng-webshop.firebaseio.com/users/${this.userId}/shoppingCart.json`;
+        this.wishListUrl = `https://ng-webshop.firebaseio.com/users/${this.userId}/wishList.json`;
     }
 
 
-    // builds url to send data to
+
+    // builds url to get data from
     getData (type: string) {
         const url = this[type + 'Url'];
         return this.get(url);
+    }
+
+
+
+    addToShoppingCart (product: Product): void {
+        this.post(this.shoppingCartUrl, product).subscribe(res => {
+            console.log('added item to shoppingcart in db', res);
+        });
+    }
+
+
+
+    addToWishList (product: Product): void {
+        this.post(this.wishListUrl, product).subscribe(res => {
+            console.log('added item to wishlist in db', res);
+        });
     }
 
 
