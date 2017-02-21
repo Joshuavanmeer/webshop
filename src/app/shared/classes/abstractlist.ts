@@ -32,6 +32,7 @@ export abstract class AbstractList {
         this.list.push(product);
         this.setLastModified(product);
         this.calulateTotalPrice();
+        this.calculateTotalItems();
     }
 
 
@@ -70,7 +71,7 @@ export abstract class AbstractList {
         this.list.forEach( item => {
             total += item.getPrice();
         });
-        this.totalPrice[0] = total;
+        this.totalPrice[0] = Number(total.toFixed(2));
     }
 
 
