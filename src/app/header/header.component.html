@@ -7,8 +7,13 @@
         <nav id="main-nav">
             <ul>
                 <li><a>My account</a></li>
-                <li><a>WS</a></li>
-                <li><a (click)="openCart()"><img src="./assets/img/shopping-cart.svg"></a></li>
+                <li><a class="square">WS</a></li>
+                <li>
+                    <a class="square" (click)="openCart()">
+                        <img src="../../assets/img/shopping-cart.svg">
+                        <div class="counter"><span>0</span></div>
+                    </a>
+                </li>
             </ul>
         </nav>
     </div>

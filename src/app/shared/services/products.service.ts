@@ -1,3 +1,5 @@
+// imports products out of the database
+
 import { Injectable } from '@angular/core';
 import { Product } from "../classes/product";
 import { HttpService } from "./http.service";

@@ -6,8 +6,16 @@ import { CommonModule } from "@angular/common";
 
 @NgModule({
     imports: [CommonModule],
-    declarations: [ProductComponent, ShoppingCartButtonComponent, WishListButtonComponent],
-    exports: [ProductComponent, ShoppingCartButtonComponent, WishListButtonComponent]
+    declarations: [
+        ProductComponent,
+        ShoppingCartButtonComponent,
+        WishListButtonComponent
+    ],
+    exports: [
+        ProductComponent,
+        ShoppingCartButtonComponent,
+        WishListButtonComponent
+    ]
 })
 
 export class SharedProductModule {
