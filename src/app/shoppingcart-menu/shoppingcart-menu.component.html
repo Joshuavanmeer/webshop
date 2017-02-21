@@ -1,0 +1,10 @@
+<div>
+    <a class="icon-container flex-row" (click)="openCart()">
+        <img src="../../assets/img/shopping-cart.svg">
+        <div class="counter"><span>{{totalItems}}</span></div>
+    </a>
+</div>
+<section id="cart-container" [ngClass]="{'cart-open': cartOpen, 'cart-closed': !cartOpen}">
+    <ws-products-minified [products]="products"></ws-products-minified>
+    <ws-total-price [totalPrice]="totalPrice"></ws-total-price>
+</section>

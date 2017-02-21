@@ -10,4 +10,8 @@ export class Product {
         private stock: number
     ) {}
 
+    getPrice(): number {
+        return this.price;
+    }
+
 }

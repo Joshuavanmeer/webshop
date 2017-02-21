@@ -10,15 +10,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-    private cartOpen:boolean = false;
     private cartValue: any = 1;
     private sub: any;
-
-    private openCart(): void {
-        this.cartOpen = this.cartOpen ? false : true;
-    }
-
-
 
 
     constructor(

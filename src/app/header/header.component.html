@@ -8,18 +8,13 @@
             <ul>
                 <li><a>My account</a></li>
                 <li><a class="square">WS</a></li>
+                <li><ws-shoppingcart-menu></ws-shoppingcart-menu></li>
                 <li>
-                    <a class="square" (click)="openCart()">
-                        <img src="../../assets/img/shopping-cart.svg">
-                        <div class="counter"><span>0</span></div>
-                    </a>
+
                 </li>
             </ul>
         </nav>
     </div>
-    <section id="cart-container" [ngClass]="{'cart-open': cartOpen, 'cart-closed': !cartOpen}">
-        <ws-products-minified></ws-products-minified>
-    </section>
 </header>
 
 

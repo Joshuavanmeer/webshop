@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core/src/metadata/ng_module";
 import { ProductComponent } from "../../product/product.component";
 import { ShoppingCartButtonComponent } from "../../shoppingcart-button/shoppingcart-button.component";
 import { WishListButtonComponent } from "../../wishlist-button/wishlist-button.component";
+import { TotalPriceComponent } from "../../total-price/total-price.component";
 import { CommonModule } from "@angular/common";
 
 @NgModule({
@@ -9,12 +10,14 @@ import { CommonModule } from "@angular/common";
     declarations: [
         ProductComponent,
         ShoppingCartButtonComponent,
-        WishListButtonComponent
+        WishListButtonComponent,
+        TotalPriceComponent
     ],
     exports: [
         ProductComponent,
         ShoppingCartButtonComponent,
-        WishListButtonComponent
+        WishListButtonComponent,
+        TotalPriceComponent
     ]
 })
 
