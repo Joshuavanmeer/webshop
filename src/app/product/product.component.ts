@@ -11,11 +11,19 @@ import { Router } from "@angular/router";
 export class ProductComponent implements OnInit {
 
     @Input() private productDetails: any;
+    private shoppingCartAction: any;
+    private inShoppingCart: boolean = false;
 
 
     private addToShoppingCart (ev): void {
         this.currentUserService.addToShoppingCart(this.productDetails);
     }
+
+
+    removeFromShoppingCart(): void {
+        this.currentUserService.removeFromShoppingCart(this.productDetails.id);
+    }
+
 
 
     private addToWishList (ev): void {
@@ -35,6 +43,16 @@ export class ProductComponent implements OnInit {
     ) { }
 
     ngOnInit() {
+
+        this.inShoppingCart = this.currentUserService.itemOnList('shoppingCart', this.productDetails.id);
+
+        this.shoppingCartAction = this.currentUserService.shoppingCartAction.subscribe(res => {
+            if (res) {
+                if (res.id === this.productDetails.id && res.action === 'add') this.inShoppingCart = true;
+                if (res.id === this.productDetails.id && res.action === 'remove') this.inShoppingCart = false;
+            }
+        });
+
     }
 
 }

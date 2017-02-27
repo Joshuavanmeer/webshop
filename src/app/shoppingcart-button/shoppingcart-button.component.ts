@@ -16,14 +16,24 @@ export class ShoppingCartButtonComponent implements OnInit {
 
 
     @Input() private inShoppingCart: boolean = false;
-    @Output() addToCart: EventEmitter<any> = new EventEmitter<any>();
+    @Output() addToShoppingCart: EventEmitter<any> = new EventEmitter<any>();
+    @Output() removeFromShoppingCart: EventEmitter<any> = new EventEmitter<any>();
 
+
+    toggleInCart(): void {
+        this.inShoppingCart = this.inShoppingCart ? false : true;
+    }
 
 
     private handleClick(ev): void {
         const target = ev.target;
         if (target.classList.contains('add-to-shoppingcart-btn')) {
-            this.addToCart.emit();
+            if (!this.inShoppingCart) {
+                this.addToShoppingCart.emit();
+            } else if (this.inShoppingCart) {
+                this.removeFromShoppingCart.emit();
+            }
+            //this.toggleInCart();
         }
     }
 

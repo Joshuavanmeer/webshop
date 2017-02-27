@@ -14,6 +14,7 @@ export class CurrentUserService {
     private shoppingCart: ShoppingCart = new ShoppingCart();
     private wishList: WishList = new WishList();
     private asyncData: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+    shoppingCartAction: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
 
 
@@ -26,12 +27,14 @@ export class CurrentUserService {
 
 
     addToShoppingCart (product: any): any {
+        console.log('bla')
         this.httpService.addToShoppingCart(product).subscribe(
             res => {
                 product.setRecordId(res.name);
                 this.shoppingCart.addProduct(product);
             }
         );
+        this.shoppingCartAction.next({ id: product.id, action: 'add' });
     }
 
 
@@ -47,6 +50,7 @@ export class CurrentUserService {
         const recordId = this.shoppingCart.getRecordId(productId);
         this.shoppingCart.removeProduct(productId);
         this.httpService.deleteProduct(recordId);
+        this.shoppingCartAction.next({ id: productId, action: 'remove' });
     }
 
 
