@@ -1,7 +1,8 @@
 <ul>
-    <li *ngFor="let product of products">
+    <li *ngFor="let product of products; let i = index">
         <h5>{{product.name}}</h5>
         <p class="price">{{product.price}}</p>
+        <ws-delete-button [productId]="products[i].id" (deleteProduct)="deleteProduct($event)"></ws-delete-button>
     </li>
 </ul>
 

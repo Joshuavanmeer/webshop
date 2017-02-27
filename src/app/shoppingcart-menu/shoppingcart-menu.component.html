@@ -5,6 +5,6 @@
     </a>
 </div>
 <section id="cart-container" [ngClass]="{'cart-open': cartOpen, 'cart-closed': !cartOpen}">
-    <ws-products-minified [products]="products"></ws-products-minified>
+    <ws-products-minified (deleteProductEv)="deleteProduct($event)" [products]="products"></ws-products-minified>
     <ws-total-price [totalPrice]="totalPrice"></ws-total-price>
 </section>

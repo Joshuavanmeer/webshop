@@ -1,8 +1,10 @@
 <div>
     <figure>
-        <img src="">
-        <h3>{{productDetails.name}}</h3>
-        <p class="product-description">{{productDetails.desc}}</p>
+        <a (click)="navigate()">
+            <img src="">
+            <h3>{{productDetails.name}}</h3>
+            <p class="product-description">{{productDetails.desc}}</p>
+        </a>
         <p class="category">{{productDetails.category}}</p>
         <p class="price">{{productDetails.price}}</p>
     </figure>

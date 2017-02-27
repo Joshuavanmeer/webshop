@@ -12,6 +12,7 @@ export class HttpService {
     private shoppingCartUrl: string;
     private wishListUrl: string;
     private header: Headers = new Headers({'Content-type': 'application/json'});
+    private productUrl: string = 'https://ng-webshop.firebaseio.com/products/';
     private productsUrl: string = 'https://ng-webshop.firebaseio.com/products.json';
 
 
@@ -20,7 +21,7 @@ export class HttpService {
     setUser (id: string) {
         this.userId = id;
         this.usersUrl = `https://ng-webshop.firebaseio.com/users/${this.userId}.json`;
-        this.shoppingCartUrl = `https://ng-webshop.firebaseio.com/users/${this.userId}/shoppingCart.json`;
+        this.shoppingCartUrl = `https://ng-webshop.firebaseio.com/users/${this.userId}/shoppingCart`;
         this.wishListUrl = `https://ng-webshop.firebaseio.com/users/${this.userId}/wishList.json`;
     }
 
@@ -33,36 +34,50 @@ export class HttpService {
     }
 
 
-
-    addToShoppingCart (product: Product): void {
-        this.post(this.shoppingCartUrl, product).subscribe(res => {
-            console.log('added item to shoppingcart in db', res);
-        });
+    getProduct(productId: string): any {
+        const productUrl = this.productUrl + productId + '.json';
+        return this.get(productUrl);
     }
 
 
 
-    addToWishList (product: Product): void {
-        this.post(this.wishListUrl, product).subscribe(res => {
-            console.log('added item to wishlist in db', res);
-        });
+    addToShoppingCart (product: Product): any {
+        return this.post(this.shoppingCartUrl + '.json', product);
     }
 
 
 
-    private get(url: string): Observable<any> {
+    addToWishList (product: Product): any {
+        return this.post(this.wishListUrl, product).subscribe(); // <================== EDIT
+    }
+
+
+    deleteProduct(urlId: string): void {
+        const url = this.shoppingCartUrl + '/' + urlId + '.json';
+        console.log(url);
+        this.delete(url).subscribe();
+    }
+
+
+
+    private get (url: string): Observable<any> {
         return this.http.get(url)
             .map((res: Response) => res.json());
     }
 
 
 
-    private post(url: string, body: any): any {
+    private post (url: string, body: any): any {
         return this.http.post(url, body, { headers: this.header }).
             map((res: Response) => res.json())
     }
 
 
+
+    private delete (url: string): any {
+        return this.http.delete(url, {headers: this.header})
+            .map(res => res.json());
+    }
 
 
 

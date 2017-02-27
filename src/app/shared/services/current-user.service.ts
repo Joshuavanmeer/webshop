@@ -3,7 +3,7 @@ import { User } from "../classes/user";
 import { HttpService } from "./http.service";
 import { ShoppingCart } from "../classes/shoppingcart";
 import { WishList } from "../classes/wishlist";
-import {Subject} from "rxjs";
+import {Subject, BehaviorSubject} from "rxjs";
 
 
 @Injectable()
@@ -13,7 +13,7 @@ export class CurrentUserService {
     private user: User;
     private shoppingCart: ShoppingCart = new ShoppingCart();
     private wishList: WishList = new WishList();
-    private asyncData: Subject<any> = new Subject<any>();
+    private asyncData: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
 
 
@@ -25,10 +25,13 @@ export class CurrentUserService {
 
 
 
-    addToShoppingCart (product: any): void {
-        this.shoppingCart.addProduct(product);
-        this.httpService.addToShoppingCart(product);
-        console.log(this.shoppingCart);
+    addToShoppingCart (product: any): any {
+        this.httpService.addToShoppingCart(product).subscribe(
+            res => {
+                product.setRecordId(res.name);
+                this.shoppingCart.addProduct(product);
+            }
+        );
     }
 
 
@@ -36,7 +39,20 @@ export class CurrentUserService {
     addToWishList (product: any): void {
         this.wishList.addProduct(product);
         this.httpService.addToWishList(product);
-        console.log(this.wishList);
+    }
+
+
+
+    removeFromShoppingCart(productId: string): void {
+        const recordId = this.shoppingCart.getRecordId(productId);
+        this.shoppingCart.removeProduct(productId);
+        this.httpService.deleteProduct(recordId);
+    }
+
+
+
+    itemOnList(type: string, id: string): boolean {
+        return this[type].productOnList(id);
     }
 
 
@@ -73,7 +89,8 @@ export class CurrentUserService {
                 );
                 this.wishList.populateList(res.wishList);
                 this.shoppingCart.populateList(res.shoppingCart);
-                this.asyncData.next();
+                console.log('currentUserService Loaded')
+                this.asyncData.next(null);
             }
         );
     }

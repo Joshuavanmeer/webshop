@@ -14,16 +14,18 @@ export abstract class AbstractList {
         for (let keyId in products) {
             let product = products[keyId];
             this.list.push(new Product(
-                keyId,
+                product.id,
                 product.name,
+                product.imgSrc,
                 product.desc,
                 product.category,
                 product.price,
                 product.sku,
-                product.stock
+                product.stock,
+                keyId
             ));
         }
-        this.calulateTotalPrice();
+        this.calculateTotalPrice();
         this.calculateTotalItems();
     }
 
@@ -31,7 +33,16 @@ export abstract class AbstractList {
     addProduct (product: Product): void {
         this.list.push(product);
         this.setLastModified(product);
-        this.calulateTotalPrice();
+        this.calculateTotalPrice();
+        this.calculateTotalItems();
+    }
+
+
+
+    removeProduct(productId: string): void {
+        let index = this.list.findIndex( item => item.id === productId);
+        this.lastModified = this.list.splice(index, 1)[0];
+        this.calculateTotalPrice();
         this.calculateTotalItems();
     }
 
@@ -53,6 +64,24 @@ export abstract class AbstractList {
     }
 
 
+
+    getRecordId (id: string): string {
+        let index = this.list.findIndex( item => item.id === id);
+        return this.list[index].recordId;
+    }
+
+
+    productOnList(id: string): boolean {
+        let onList = false;
+        this.list.forEach( item => {
+            if (item.id === id) {
+                onList = true;
+            }
+        })
+        return onList;
+    }
+
+
     // returns a copy of the last modified
     // item to keep post requests small
     getLastModifiedItem () {
@@ -66,7 +95,7 @@ export abstract class AbstractList {
     }
 
 
-    calulateTotalPrice (): void {
+    calculateTotalPrice (): void {
         let total = 0;
         this.list.forEach( item => {
             total += item.getPrice();

@@ -22,6 +22,10 @@ export class ShoppingCartMenuComponent implements OnInit {
     }
 
 
+    private deleteProduct(productId: string): void {
+        this.currentUserService.removeFromShoppingCart(productId);
+    }
+
 
     constructor(
         private currentUserService: CurrentUserService

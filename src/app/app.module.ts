@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HeaderModule } from "./header/header.module";
 import { HomeModule } from "./home/home.module";
+import { ProductPageModule } from "./product-page/product-page.module";
 
 import { AppComponent } from './app.component';
 
@@ -24,7 +25,8 @@ import { routing } from "./shared/routing/app.routing";
         FormsModule,
         HttpModule,
         HeaderModule,
-        HomeModule
+        HomeModule,
+        ProductPageModule
     ],
     providers: [HttpService, CurrentUserService, ProductsService],
     bootstrap: [AppComponent]

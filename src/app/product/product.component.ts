@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from "@angular/core/src/metadata/directives";
 import { CurrentUserService } from "../shared/services/current-user.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'ws-product',
@@ -12,19 +13,26 @@ export class ProductComponent implements OnInit {
     @Input() private productDetails: any;
 
 
-
-    addToShoppingCart (ev): void {
+    private addToShoppingCart (ev): void {
         this.currentUserService.addToShoppingCart(this.productDetails);
     }
 
 
-    addToWishList (ev): void {
+    private addToWishList (ev): void {
         this.currentUserService.addToWishList(this.productDetails);
     }
 
 
+    private navigate (): void {
+        this.router.navigate(['/p', this.productDetails.id]);
+    }
 
-    constructor(private currentUserService: CurrentUserService) { }
+
+
+    constructor(
+        private currentUserService: CurrentUserService,
+        private router: Router
+    ) { }
 
     ngOnInit() {
     }

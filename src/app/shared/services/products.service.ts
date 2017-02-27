@@ -35,6 +35,7 @@ export class ProductsService {
             this.products.push(new Product(
                 keyId,
                 product.name,
+                product.imgSrc,
                 product.desc,
                 product.category,
                 product.price,
