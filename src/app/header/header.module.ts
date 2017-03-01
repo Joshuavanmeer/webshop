@@ -4,6 +4,7 @@ import { HeaderComponent } from "./header.component";
 import { ProductsMinifiedComponent } from "../products-minified/products-minified.component";
 import { SharedProductModule } from "../shared/modules/shared-product.module";
 import { ShoppingCartMenuComponent } from "../shoppingcart-menu/shoppingcart-menu.component";
+import { WishlistMenuComponent } from "../wishlist-menu/wishlist-menu.component";
 
 
 
@@ -12,7 +13,8 @@ import { ShoppingCartMenuComponent } from "../shoppingcart-menu/shoppingcart-men
     declarations: [
         HeaderComponent,
         ProductsMinifiedComponent,
-        ShoppingCartMenuComponent
+        ShoppingCartMenuComponent,
+        WishlistMenuComponent
     ],
     exports: [HeaderComponent],
     providers: []

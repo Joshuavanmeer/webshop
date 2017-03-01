@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-
-
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'ws-header',
@@ -10,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-    private cartValue: any = 1;
-    private sub: any;
+
+    handleClick (ev): void {
+        const target = ev.target;
+        if (target.id === 'logo') {
+            this.router.navigate(['/']);
+        }
+    }
 
 
     constructor(
+        private router: Router
     ) {}
 
     ngOnInit() {

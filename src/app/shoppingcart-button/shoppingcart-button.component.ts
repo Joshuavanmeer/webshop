@@ -33,7 +33,6 @@ export class ShoppingCartButtonComponent implements OnInit {
             } else if (this.inShoppingCart) {
                 this.removeFromShoppingCart.emit();
             }
-            //this.toggleInCart();
         }
     }
 

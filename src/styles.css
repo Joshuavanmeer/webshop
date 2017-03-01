@@ -96,3 +96,10 @@ h1, h2, h3, h4, h5 {
     display: flex;
     flex-flow: row nowrap;
 }
+
+
+.product-container {
+    border: 1px solid #e5e5e5;
+    width: 20%;
+    margin: 1%;
+}

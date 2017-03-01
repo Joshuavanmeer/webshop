@@ -16,6 +16,7 @@ export class ProductPageComponent implements OnInit {
     private inShoppingCart: boolean = false;
     private onWishList: boolean = false;
     private shoppingCartAction: any;
+    private wishListAction: any;
 
 
 
@@ -33,6 +34,11 @@ export class ProductPageComponent implements OnInit {
 
     private addToWishList(): void {
         this.currentUserService.addToWishList(this.product);
+    }
+
+
+    private removeFromWishList (): void {
+        this.currentUserService.removeFromWishList(this.productId);
     }
 
 
@@ -81,6 +87,15 @@ export class ProductPageComponent implements OnInit {
                 if (res.id === this.productId && res.action === 'remove') this.inShoppingCart = false;
             }
         });
+
+
+        this.wishListAction = this.currentUserService.wishListAction.subscribe(res => {
+            if (res) {
+                if (res.id === this.productId && res.action === 'add') this.onWishList = true;
+                if (res.id === this.productId && res.action === 'remove') this.onWishList = false;
+            }
+        });
+
 
     }
 

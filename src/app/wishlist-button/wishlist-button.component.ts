@@ -16,15 +16,21 @@ export class WishListButtonComponent implements OnInit {
 
     @Input() private onWishList: boolean = false;
     @Output() addToWishList: EventEmitter<any> = new EventEmitter<any>();
+    @Output() removeFromWishList: EventEmitter<any> = new EventEmitter<any>();
 
 
 
     private handleClick(ev): void {
         const target = ev.target;
         if (target.classList.contains('add-to-wishlist-btn')) {
-            this.addToWishList.emit(ev);
+            if (!this.onWishList) {
+                this.addToWishList.emit();
+            } else if (this.onWishList) {
+                this.removeFromWishList.emit();
+            }
         }
     }
+
 
 
     constructor() { }

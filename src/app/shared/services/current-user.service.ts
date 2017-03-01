@@ -15,6 +15,7 @@ export class CurrentUserService {
     private wishList: WishList = new WishList();
     private asyncData: BehaviorSubject<any> = new BehaviorSubject<any>(null);
     shoppingCartAction: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+    wishListAction: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
 
 
@@ -27,7 +28,6 @@ export class CurrentUserService {
 
 
     addToShoppingCart (product: any): any {
-        console.log('bla')
         this.httpService.addToShoppingCart(product).subscribe(
             res => {
                 product.setRecordId(res.name);
@@ -40,17 +40,32 @@ export class CurrentUserService {
 
 
     addToWishList (product: any): void {
-        this.wishList.addProduct(product);
-        this.httpService.addToWishList(product);
+        this.httpService.addToWishList(product).subscribe(
+            res => {
+                product.setRecordId(res.name);
+                this.wishList.addProduct(product);
+                console.log(this.wishList);
+            }
+        );
+        this.wishListAction.next({ id: product.id, action: 'add' });
     }
 
 
 
-    removeFromShoppingCart(productId: string): void {
+    removeFromShoppingCart (productId: string): void {
         const recordId = this.shoppingCart.getRecordId(productId);
         this.shoppingCart.removeProduct(productId);
-        this.httpService.deleteProduct(recordId);
+        this.httpService.deleteProduct('shoppingCart', recordId);
         this.shoppingCartAction.next({ id: productId, action: 'remove' });
+    }
+
+
+
+    removeFromWishList (productId: string): void {
+        const recordId = this.wishList.getRecordId(productId);
+        this.wishList.removeProduct(productId);
+        this.httpService.deleteProduct('wishList', recordId);
+        this.wishListAction.next({ id: productId, action: 'remove' });
     }
 
 

@@ -22,7 +22,7 @@ export class HttpService {
         this.userId = id;
         this.usersUrl = `https://ng-webshop.firebaseio.com/users/${this.userId}.json`;
         this.shoppingCartUrl = `https://ng-webshop.firebaseio.com/users/${this.userId}/shoppingCart`;
-        this.wishListUrl = `https://ng-webshop.firebaseio.com/users/${this.userId}/wishList.json`;
+        this.wishListUrl = `https://ng-webshop.firebaseio.com/users/${this.userId}/wishList`;
     }
 
 
@@ -48,12 +48,12 @@ export class HttpService {
 
 
     addToWishList (product: Product): any {
-        return this.post(this.wishListUrl, product).subscribe(); // <================== EDIT
+        return this.post(this.wishListUrl + '.json', product);
     }
 
 
-    deleteProduct(urlId: string): void {
-        const url = this.shoppingCartUrl + '/' + urlId + '.json';
+    deleteProduct(type: string, urlId: string): void {
+        const url = this[type + 'Url']+ '/' + urlId + '.json';
         console.log(url);
         this.delete(url).subscribe();
     }

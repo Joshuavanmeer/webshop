@@ -12,7 +12,9 @@ export class ProductComponent implements OnInit {
 
     @Input() private productDetails: any;
     private shoppingCartAction: any;
+    private wishListAction: any;
     private inShoppingCart: boolean = false;
+    private onWishList: boolean = false;
 
 
     private addToShoppingCart (ev): void {
@@ -20,7 +22,7 @@ export class ProductComponent implements OnInit {
     }
 
 
-    removeFromShoppingCart(): void {
+    private removeFromShoppingCart(): void {
         this.currentUserService.removeFromShoppingCart(this.productDetails.id);
     }
 
@@ -29,6 +31,12 @@ export class ProductComponent implements OnInit {
     private addToWishList (ev): void {
         this.currentUserService.addToWishList(this.productDetails);
     }
+
+
+    private removeFromWishList(): void {
+        this.currentUserService.removeFromWishList(this.productDetails.id);
+    }
+
 
 
     private navigate (): void {
@@ -45,6 +53,7 @@ export class ProductComponent implements OnInit {
     ngOnInit() {
 
         this.inShoppingCart = this.currentUserService.itemOnList('shoppingCart', this.productDetails.id);
+        this.onWishList = this.currentUserService.itemOnList('wishList', this.productDetails.id);
 
         this.shoppingCartAction = this.currentUserService.shoppingCartAction.subscribe(res => {
             if (res) {
@@ -52,6 +61,14 @@ export class ProductComponent implements OnInit {
                 if (res.id === this.productDetails.id && res.action === 'remove') this.inShoppingCart = false;
             }
         });
+
+        this.wishListAction = this.currentUserService.wishListAction.subscribe(res => {
+            if (res) {
+                if (res.id === this.productDetails.id && res.action === 'add') this.onWishList = true;
+                if (res.id === this.productDetails.id && res.action === 'remove') this.onWishList = false;
+            }
+        });
+
 
     }
 

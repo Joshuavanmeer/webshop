@@ -1,17 +1,14 @@
-<header class="menu-font-large">
+<header class="menu-font-large" (click)="handleClick($event)">
     <div>
         <div id="logo-container">
-            <h1><span class="logo-fat">Web</span><span class="logo-thin">shop</span></h1>
+            <h1 id="logo"><span class="logo-fat">Web</span><span class="logo-thin">shop</span></h1>
         </div>
         <div id="search-placeholder"><!-- searchbar component --></div>
         <nav id="main-nav">
             <ul>
                 <li><a>My account</a></li>
-                <li><a class="square">WS</a></li>
+                <li><ws-wishlist-menu></ws-wishlist-menu></li>
                 <li><ws-shoppingcart-menu></ws-shoppingcart-menu></li>
-                <li>
-
-                </li>
             </ul>
         </nav>
     </div>

@@ -13,6 +13,7 @@ import { HttpService } from "./shared/services/http.service";
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { ProductsService } from "./shared/services/products.service";
 import { routing } from "./shared/routing/app.routing";
+import { WishlistModule } from "./wishlist/wishlist.module";
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import { routing } from "./shared/routing/app.routing";
         HttpModule,
         HeaderModule,
         HomeModule,
-        ProductPageModule
+        ProductPageModule,
+        WishlistModule
     ],
     providers: [HttpService, CurrentUserService, ProductsService],
     bootstrap: [AppComponent]

@@ -3,6 +3,9 @@
 }
 
 
+#logo {
+    cursor: pointer;
+}
 
 nav#main-nav, nav#cart-placeholder, ul, li, header div, a {
     display: flex;
@@ -32,14 +35,18 @@ nav ul {
 }
 
 
+
 .logo-fat {
     font-weight: 700;
     color: #585858;
+    pointer-events: none;
 }
+
 
 
 .logo-thin {
     color: white;
+    pointer-events: none;
 }
 
 

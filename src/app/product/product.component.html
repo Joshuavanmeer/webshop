@@ -9,5 +9,5 @@
         <p class="price">{{productDetails.price}}</p>
     </figure>
     <ws-shoppingcart-button (addToShoppingCart)="addToShoppingCart($event)" (removeFromShoppingCart)="removeFromShoppingCart()" [inShoppingCart]="inShoppingCart"></ws-shoppingcart-button>
-    <ws-wishlist-button (addToWishList)="addToWishList($event)"></ws-wishlist-button>
+    <ws-wishlist-button (addToWishList)="addToWishList($event)" (removeFromWishList)="removeFromWishList()" [onWishList]="onWishList"></ws-wishlist-button>
 </div>
