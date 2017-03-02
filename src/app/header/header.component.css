@@ -18,6 +18,9 @@ nav#main-nav {
     height: 100%;
 }
 
+#logo {
+    z-index: 100;
+}
 
 header {
     background: #17baa9;

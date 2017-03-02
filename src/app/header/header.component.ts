@@ -9,20 +9,7 @@ import { Router } from "@angular/router";
 export class HeaderComponent implements OnInit {
 
 
-    handleClick (ev): void {
-        const target = ev.target;
-        if (target.id === 'logo') {
-            this.router.navigate(['/']);
-        }
-        else if (target.id === 'my-account-btn') {
-            this.router.navigate(['/myaccount']);
-        }
-    }
-
-
-    constructor(
-        private router: Router
-    ) {}
+    constructor() {}
 
     ngOnInit() {
 

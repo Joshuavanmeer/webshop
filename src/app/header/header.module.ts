@@ -5,11 +5,16 @@ import { ProductsMinifiedComponent } from "../products-minified/products-minifie
 import { SharedProductModule } from "../shared/modules/shared-product.module";
 import { ShoppingCartMenuComponent } from "../shoppingcart-menu/shoppingcart-menu.component";
 import { WishlistMenuComponent } from "../wishlist-menu/wishlist-menu.component";
+import { RouterModule } from "@angular/router";
 
 
 
 @NgModule({
-    imports: [CommonModule, SharedProductModule],
+    imports: [
+        CommonModule,
+        SharedProductModule,
+        RouterModule
+    ],
     declarations: [
         HeaderComponent,
         ProductsMinifiedComponent,
