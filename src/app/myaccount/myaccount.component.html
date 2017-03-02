@@ -1,0 +1,65 @@
+<form (ngSubmit)="submitForm()" [formGroup]="myAccountForm" autocomplete="off" novalidate>
+    <div class="input-container">
+        <input formControlName="firstName" type="text">
+        <span
+            *ngIf="myAccountForm.controls['firstName'].hasError('required') && myAccountForm.controls['firstName'].touched"
+            class="error-msg"
+            [@errorMsg] >
+            This field is required
+        </span>
+    </div>
+
+    <div class="input-container">
+        <input formControlName="lastName" type="text">
+        <span
+            *ngIf="myAccountForm.controls['lastName'].hasError('required') && myAccountForm.controls['lastName'].touched"
+            class="error-msg"
+            [@errorMsg] >
+            This field is required
+        </span>
+    </div>
+
+    <div class="input-container">
+        <input formControlName="streetName" type="text">
+        <span
+            *ngIf="myAccountForm.controls['streetName'].hasError('required') && myAccountForm.controls['streetName'].touched"
+            class="error-msg"
+            [@errorMsg] >
+            This field is required
+        </span>
+    </div>
+
+    <div class="input-container">
+        <input formControlName="streetNumber" type="text">
+        <span
+            *ngIf="myAccountForm.controls['streetNumber'].hasError('required') && myAccountForm.controls['streetNumber'].touched"
+            class="error-msg"
+            [@errorMsg] >
+            This field is required
+        </span>
+    </div>
+
+    <div class="input-container">
+        <input formControlName="city" type="text">
+        <span
+            *ngIf="myAccountForm.controls['city'].hasError('required') && myAccountForm.controls['city'].touched"
+            class="error-msg"
+            [@errorMsg] >
+            This field is required
+        </span>
+    </div>
+
+    <div class="input-container">
+        <input formControlName="phoneNumber" type="text">
+        <span
+            *ngIf="myAccountForm.controls['phoneNumber'].hasError('required') && myAccountForm.controls['phoneNumber'].touched"
+            class="error-msg"
+            [@errorMsg] >
+            This field is required
+        </span>
+    </div>
+    <!-- Submit button ------------------------------------->
+    <div class="input-container">
+        <button type="submit">Submit</button>
+    </div>
+</form>

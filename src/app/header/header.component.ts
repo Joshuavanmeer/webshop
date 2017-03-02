@@ -14,6 +14,9 @@ export class HeaderComponent implements OnInit {
         if (target.id === 'logo') {
             this.router.navigate(['/']);
         }
+        else if (target.id === 'my-account-btn') {
+            this.router.navigate(['/myaccount']);
+        }
     }
 
 

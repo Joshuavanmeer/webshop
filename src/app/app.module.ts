@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import { HeaderModule } from "./header/header.module";
 import { HomeModule } from "./home/home.module";
 import { ProductPageModule } from "./product-page/product-page.module";
+import { WishlistModule } from "./wishlist/wishlist.module";
+import { MyaccountModule } from "./myaccount/myaccount.module";
 
 import { AppComponent } from './app.component';
 
@@ -13,7 +15,6 @@ import { HttpService } from "./shared/services/http.service";
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { ProductsService } from "./shared/services/products.service";
 import { routing } from "./shared/routing/app.routing";
-import { WishlistModule } from "./wishlist/wishlist.module";
 
 @NgModule({
     declarations: [
@@ -28,7 +29,8 @@ import { WishlistModule } from "./wishlist/wishlist.module";
         HeaderModule,
         HomeModule,
         ProductPageModule,
-        WishlistModule
+        WishlistModule,
+        MyaccountModule
     ],
     providers: [HttpService, CurrentUserService, ProductsService],
     bootstrap: [AppComponent]

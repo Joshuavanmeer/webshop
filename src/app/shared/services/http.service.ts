@@ -20,7 +20,7 @@ export class HttpService {
     // sets and builds urls for service to connect to db
     setUser (id: string) {
         this.userId = id;
-        this.usersUrl = `https://ng-webshop.firebaseio.com/users/${this.userId}.json`;
+        this.usersUrl = `https://ng-webshop.firebaseio.com/users/${this.userId}/details.json`;
         this.shoppingCartUrl = `https://ng-webshop.firebaseio.com/users/${this.userId}/shoppingCart`;
         this.wishListUrl = `https://ng-webshop.firebaseio.com/users/${this.userId}/wishList`;
     }
@@ -32,6 +32,12 @@ export class HttpService {
         const url = this[type + 'Url'];
         return this.get(url);
     }
+
+
+    updateUserDetails(body: any): any {
+        return this.put(this.usersUrl, body);
+    }
+
 
 
     getProduct(productId: string): any {
@@ -54,7 +60,6 @@ export class HttpService {
 
     deleteProduct(type: string, urlId: string): void {
         const url = this[type + 'Url']+ '/' + urlId + '.json';
-        console.log(url);
         this.delete(url).subscribe();
     }
 
@@ -68,8 +73,15 @@ export class HttpService {
 
 
     private post (url: string, body: any): any {
-        return this.http.post(url, body, { headers: this.header }).
-            map((res: Response) => res.json())
+        return this.http.post(url, body, { headers: this.header })
+            .map((res: Response) => res.json())
+    }
+
+
+
+    private put(url: string, body: any): any {
+        return this.http.put(url, body, {headers: this.header})
+            .map((res: Response) => res.json())
     }
 
 

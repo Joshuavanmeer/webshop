@@ -16,6 +16,7 @@ export class CurrentUserService {
     private asyncData: BehaviorSubject<any> = new BehaviorSubject<any>(null);
     shoppingCartAction: BehaviorSubject<any> = new BehaviorSubject<any>(null);
     wishListAction: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+    currentUserAction: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
 
 
@@ -23,6 +24,16 @@ export class CurrentUserService {
     init (): void {
         this.httpService.setUser('-Kd0DbIcXZJgKajr99Dw');
         this.createDummyUser();
+    }
+
+
+
+    updateUserDetails(body: any): void {
+        this.httpService.updateUserDetails(body).subscribe(
+            res => {
+                console.log(res);
+            }
+        )
     }
 
 
@@ -101,13 +112,12 @@ export class CurrentUserService {
                     res.lastName,
                     res.streetName,
                     res.streetNumber,
-                    res.streetNumberAddition,
-                    res.zipCode,
                     res.city,
                     res.phoneNumber
                 );
                 this.wishList.populateList(res.wishList);
                 this.shoppingCart.populateList(res.shoppingCart);
+                this.currentUserAction.next(this.user.getDetails());
                 console.log('currentUserService Loaded')
                 this.asyncData.next(null);
             }
