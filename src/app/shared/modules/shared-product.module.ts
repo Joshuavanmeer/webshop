@@ -5,6 +5,7 @@ import { WishListButtonComponent } from "../../wishlist-button/wishlist-button.c
 import { TotalPriceComponent } from "../../total-price/total-price.component";
 import { CommonModule } from "@angular/common";
 import { DeleteButtonComponent } from "../../delete-button/delete-button.component";
+import { TruncatePipe } from "../pipes/truncate";
 
 @NgModule({
     imports: [CommonModule],
@@ -13,14 +14,16 @@ import { DeleteButtonComponent } from "../../delete-button/delete-button.compone
         ShoppingCartButtonComponent,
         WishListButtonComponent,
         TotalPriceComponent,
-        DeleteButtonComponent
+        DeleteButtonComponent,
+        TruncatePipe
     ],
     exports: [
         ProductComponent,
         ShoppingCartButtonComponent,
         WishListButtonComponent,
         TotalPriceComponent,
-        DeleteButtonComponent
+        DeleteButtonComponent,
+        TruncatePipe
     ]
 })
 

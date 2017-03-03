@@ -4,9 +4,9 @@ import { CurrentUserService } from "../shared/services/current-user.service";
 import { Router } from "@angular/router";
 
 @Component({
-  selector: 'ws-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+    selector: 'ws-product',
+    templateUrl: './product.component.html',
+    styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
 

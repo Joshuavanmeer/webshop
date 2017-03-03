@@ -4,7 +4,7 @@
             <img src="../../assets/img/products/{{productDetails.imgSrc}}">
         </figure>
         <h3 class="title-medium">{{productDetails.name}}</h3>
-        <p class="product-description intro">{{productDetails.desc}}</p>
+        <p class="product-description intro">{{productDetails.desc | truncate:120 }}</p>
     </a>
     <p class="category">{{productDetails.category}}</p>
     <p class="price">{{productDetails.price}}</p>
