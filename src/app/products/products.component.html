@@ -1,8 +1,5 @@
-<p>
-  PRODUCTS MODULE!
-</p>
 <ul>
-    <li class="product-container" *ngFor="let product of products;">
+    <li *ngFor="let product of products;">
         <ws-product [productDetails]="product"></ws-product>
     </li>
 </ul>

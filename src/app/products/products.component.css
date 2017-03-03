@@ -1,1 +1,13 @@
+ul {
+    display: flex;
+    flex-flow: row wrap;
+}
 
+li {
+    width: 23.125%;
+    margin-right: 2.5%;
+}
+
+li:nth-child(4) {
+    margin-right: 0;
+}

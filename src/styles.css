@@ -107,6 +107,15 @@ button {
 }
 
 
+.title-medium {
+    font-size: 2.8rem;
+    line-height: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 200;
+    margin: 0 0 10px;
+}
+
+
 .title-small {
     font-weight: 700;
     font-size: 1.8rem;
@@ -127,6 +136,10 @@ p {
     font-size: 1.5rem;
     line-height: 2.4rem;
     font-family: 'Hind', sans-serif;
+}
+
+.intro {
+    text-overflow: ellipsis;
 }
 
 
