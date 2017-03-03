@@ -16,19 +16,19 @@
     padding: 100px 20px 20px;
     color: black;
     width: 300px;
-    height: calc(100% - 80px);
+    height: calc(100% - 50px);
     z-index: 999;
     position: absolute;
     right: 0;
-    top: 80px;
+    top: 50px;
     transform-origin: right;
     opacity: 1;
 }
 
 
 .icon-container {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     justify-content: center;
     position: relative;
 }
@@ -47,8 +47,8 @@ a .counter {
     line-height: 1.3rem;
     text-align: center;
     position: absolute;
-    top: 20px;
-    left: 45px;
+    top: 7px;
+    left: 28px;
     justify-content: center;
     border-radius: 8px;
 }
@@ -56,4 +56,26 @@ a .counter {
 
 * {
     transition: all .2s;
+}
+
+
+@media screen and (min-width: 560px) {
+
+    .icon-container {
+        width: 80px;
+        height: 80px;
+    }
+
+    a .counter {
+        top: 20px;
+        left: 45px;
+    }
+
+    #cart-container {
+        height: calc(100% - 80px);
+        top: 80px;
+    }
+
+
+
 }

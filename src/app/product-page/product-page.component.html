@@ -1,7 +1,13 @@
-<h1>{{product?.name}}</h1>
-<img src="../../assets/img/products/{{product?.imgSrc}}">
-<h3>About</h3>
-<p>{{product?.desc}}</p>
-<ws-shoppingcart-button (addToShoppingCart)="addToShoppingCart()" (removeFromShoppingCart)="removeFromShoppingCart()" [inShoppingCart]="inShoppingCart"></ws-shoppingcart-button>
-<ws-wishlist-button (addToWishList)="addToWishList()" (removeFromWishList)="removeFromWishList()" [onWishList]="onWishList"></ws-wishlist-button>
-<p>{{product?.price}}</p>
+<h1 class="title">{{product?.name}}</h1>
+<section>
+    <figure>
+        <img src="../../assets/img/products/{{product?.imgSrc}}">
+    </figure>
+    <aside>
+        <h3 class="title-small">About</h3>
+        <p>{{product?.desc}}</p>
+        <p class="price-tag-large">{{product?.price}}</p>
+        <ws-shoppingcart-button (addToShoppingCart)="addToShoppingCart()" (removeFromShoppingCart)="removeFromShoppingCart()" [inShoppingCart]="inShoppingCart"></ws-shoppingcart-button>
+        <ws-wishlist-button (addToWishList)="addToWishList()" (removeFromWishList)="removeFromWishList()" [onWishList]="onWishList"></ws-wishlist-button>
+    </aside>
+</section>

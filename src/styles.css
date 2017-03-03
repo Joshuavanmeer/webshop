@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Dosis:400,700');
-
+@import url('https://fonts.googleapis.com/css?family=Dosis:200,400,700');
+@import url('https://fonts.googleapis.com/css?family=Hind:300');
 
 
 /*=====================================
@@ -65,15 +65,17 @@ html {
     font-size: 62.5%;
 }
 
-body {
-    font-family: 'Dosis', sans-serif;
+body, input {
     color: #323a38;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+    font-family: 'Hind', sans-serif;
 }
 
 
 a {
     cursor: pointer;
+    text-decoration: none;
 }
 
 
@@ -82,7 +84,58 @@ h1 {
 }
 
 h1, h2, h3, h4, h5 {
+    font-family: 'Dosis', sans-serif;
     text-transform: uppercase;
+}
+
+
+button {
+    font-weight: 700;
+    font-family: 'Dosis';
+    cursor: pointer;
+    font-size: 1.6rem;
+}
+
+
+.title {
+    font-size: 4rem;
+    line-height: 4.5rem;
+    color: #909090;
+    text-transform: uppercase;
+    font-weight: 200;
+    margin: 0 0 30px;
+}
+
+
+.title-small {
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin: 0 0 15px;
+    text-transform: uppercase;
+}
+
+.title-xsmall {
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin: 0 0 15px;
+    text-transform: uppercase;
+}
+
+
+p {
+    color: #323a38;
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+    font-family: 'Hind', sans-serif;
+}
+
+
+.price-tag-large {
+    font-size: 4rem;
+    color: #3dc4b6;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 200 ;
+    margin: 40px 0;
 }
 
 
@@ -103,3 +156,4 @@ h1, h2, h3, h4, h5 {
     width: 20%;
     margin: 1%;
 }
+

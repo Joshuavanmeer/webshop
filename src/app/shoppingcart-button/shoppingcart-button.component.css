@@ -1,0 +1,43 @@
+.in-shoppingcart {
+    background: #17baa9;
+    color: white;
+}
+
+
+button {
+    border: 1px solid #17baa9;
+    color: #17baa9;
+    height: 45px;
+    background: white;
+    border-radius: 3px;
+    padding: 2px 20px 0 15px;
+}
+
+.button-helper {
+    display: inline-flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    pointer-events: none;
+}
+
+
+.icon {
+    display: inline-block;
+    background: url('../../assets/img/icons/cart_green.svg');
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    margin: 0 10px 0 0;
+}
+
+.icon-in-shoppingcart {
+    background: url('../../assets/img/icons/cart_white.svg');
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+}
+
+
+* {
+    transition: all .1s;
+}

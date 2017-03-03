@@ -1,4 +1,10 @@
 <button
     class="add-to-shoppingcart-btn"
     [ngClass]="{ 'in-shoppingcart': inShoppingCart }"
-    (click)="handleClick($event)">ADD TO CART</button>
+    (click)="handleClick($event)">
+    <div class="button-helper">
+        <i class="icon" [ngClass]="{ 'icon-in-shoppingcart': inShoppingCart }"></i>
+        <span>ADD TO CART</span>
+    </div>
+</button>
+

@@ -110,7 +110,7 @@ export class CurrentUserService {
                     '-Kd0DbIcXZJgKajr99Dw',
                     res.firstName,
                     res.lastName,
-                    res.streetName,
+                    res.street,
                     res.streetNumber,
                     res.city,
                     res.phoneNumber

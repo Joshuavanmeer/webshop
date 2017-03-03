@@ -1,65 +1,119 @@
-<form (ngSubmit)="submitForm()" [formGroup]="myAccountForm" autocomplete="off" novalidate>
-    <div class="input-container">
-        <input formControlName="firstName" type="text">
-        <span
-            *ngIf="myAccountForm.controls['firstName'].hasError('required') && myAccountForm.controls['firstName'].touched"
-            class="error-msg"
-            [@errorMsg] >
-            This field is required
-        </span>
-    </div>
+<section>
 
-    <div class="input-container">
-        <input formControlName="lastName" type="text">
-        <span
-            *ngIf="myAccountForm.controls['lastName'].hasError('required') && myAccountForm.controls['lastName'].touched"
-            class="error-msg"
-            [@errorMsg] >
-            This field is required
-        </span>
-    </div>
+    <h1 class="title">My account details</h1>
 
-    <div class="input-container">
-        <input formControlName="streetName" type="text">
-        <span
-            *ngIf="myAccountForm.controls['streetName'].hasError('required') && myAccountForm.controls['streetName'].touched"
-            class="error-msg"
-            [@errorMsg] >
-            This field is required
-        </span>
-    </div>
+    <form (ngSubmit)="submitForm()" [formGroup]="myAccountForm" autocomplete="off" novalidate>
 
-    <div class="input-container">
-        <input formControlName="streetNumber" type="text">
-        <span
-            *ngIf="myAccountForm.controls['streetNumber'].hasError('required') && myAccountForm.controls['streetNumber'].touched"
-            class="error-msg"
-            [@errorMsg] >
-            This field is required
-        </span>
-    </div>
+        <div class="input-container">
+            <label class="title-xsmall" for="name">Name</label>
+            <input id="name" formControlName="firstName" type="text">
+            <span
+                *ngIf="myAccountForm.controls['firstName'].hasError('pattern')"
+                class="error-msg"
+                [@errorMsg] >
+                May only contain alphabetical characters
+            </span>
+            <span
+                *ngIf="myAccountForm.controls['firstName'].hasError('required') && myAccountForm.controls['firstName'].touched"
+                class="error-msg"
+                [@errorMsg] >
+                This field is required
+            </span>
+        </div>
 
-    <div class="input-container">
-        <input formControlName="city" type="text">
-        <span
-            *ngIf="myAccountForm.controls['city'].hasError('required') && myAccountForm.controls['city'].touched"
-            class="error-msg"
-            [@errorMsg] >
-            This field is required
-        </span>
-    </div>
 
-    <div class="input-container">
-        <input formControlName="phoneNumber" type="text">
-        <span
-            *ngIf="myAccountForm.controls['phoneNumber'].hasError('required') && myAccountForm.controls['phoneNumber'].touched"
-            class="error-msg"
-            [@errorMsg] >
-            This field is required
-        </span>
-    </div>
-    <!-- Submit button ------------------------------------->
-    <div class="input-container">
-        <button type="submit">Submit</button>
-    </div>
-</form>
+        <div class="input-container">
+            <label class="title-xsmall" for="lastname">Surname</label>
+            <input id="lastname" formControlName="lastName" type="text">
+            <span
+                *ngIf="myAccountForm.controls['lastName'].hasError('pattern')"
+                class="error-msg"
+                [@errorMsg] >
+                May only contain alphabetical characters
+            </span>
+            <span
+                *ngIf="myAccountForm.controls['lastName'].hasError('required') && myAccountForm.controls['lastName'].touched"
+                class="error-msg"
+                [@errorMsg] >
+                This field is required
+            </span>
+        </div>
+
+
+        <div class="input-container">
+            <label class="title-xsmall" for="street">Street</label>
+            <input id="street" formControlName="street" type="text">
+            <span
+                *ngIf="myAccountForm.controls['street'].hasError('pattern')"
+                class="error-msg"
+                [@errorMsg] >
+                May only contain alphabetical characters
+            </span>
+            <span
+                *ngIf="myAccountForm.controls['street'].hasError('required') && myAccountForm.controls['street'].touched"
+                class="error-msg"
+                [@errorMsg] >
+                This field is required
+            </span>
+        </div>
+
+
+        <div class="input-container">
+            <label class="title-xsmall" for="streetnumber">Street number</label>
+            <input id="streetnumber" formControlName="streetNumber" type="text">
+            <span
+                *ngIf="myAccountForm.controls['streetNumber'].hasError('pattern')"
+                class="error-msg"
+                [@errorMsg] >
+                May only contain numbers
+            </span>
+            <span
+                *ngIf="myAccountForm.controls['streetNumber'].hasError('required') && myAccountForm.controls['streetNumber'].touched"
+                class="error-msg"
+                [@errorMsg] >
+                This field is required
+            </span>
+        </div>
+
+
+        <div class="input-container">
+            <label class="title-xsmall" for="city">City</label>
+            <input id="city" formControlName="city" type="text">
+            <span
+                *ngIf="myAccountForm.controls['city'].hasError('pattern')"
+                class="error-msg"
+                [@errorMsg] >
+                May only contain alphabetical characters
+            </span>
+            <span
+                *ngIf="myAccountForm.controls['city'].hasError('required') && myAccountForm.controls['city'].touched"
+                class="error-msg"
+                [@errorMsg] >
+                This field is required
+            </span>
+        </div>
+
+
+        <div class="input-container">
+            <label class="title-xsmall" for="phone">Phone</label>
+            <input id="phone" formControlName="phoneNumber" type="text">
+            <span
+                *ngIf="myAccountForm.controls['phoneNumber'].hasError('pattern')"
+                class="error-msg"
+                [@errorMsg] >
+                May only contain numbers
+            </span>
+            <span
+                *ngIf="myAccountForm.controls['phoneNumber'].hasError('required') && myAccountForm.controls['phoneNumber'].touched"
+                class="error-msg"
+                [@errorMsg] >
+                This field is required
+            </span>
+        </div>
+        <!-- Submit button ------------------------------------->
+        <div class="input-container">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+</section>

@@ -2,15 +2,9 @@ import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { Input } from "@angular/core/src/metadata/directives";
 
 @Component({
-  selector: 'ws-shoppingcart-button',
-  templateUrl: './shoppingcart-button.component.html',
-  styles: [`
-        
-        .in-shoppingcart {
-            background: yellow;
-        }
-        
-    `]
+    selector: 'ws-shoppingcart-button',
+    templateUrl: './shoppingcart-button.component.html',
+    styleUrls: ['./shoppingcart-button.component.css']
 })
 export class ShoppingCartButtonComponent implements OnInit {
 

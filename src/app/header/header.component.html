@@ -1,12 +1,11 @@
 <header class="menu-font-large">
-    <div>
+    <div class="center-container">
         <div id="logo-container">
-            <h1 [routerLink]="['/']"  id="logo"><span class="logo-fat">Web</span><span class="logo-thin">shop</span></h1>
+            <h1 [routerLink]="['/']" id="logo"><span class="logo-fat">Web</span><span class="logo-thin">shop</span></h1>
         </div>
-        <div id="search-placeholder"><!-- searchbar component --></div>
         <nav id="main-nav">
             <ul>
-                <li><a [routerLink]="['/myaccount']" id="my-account-btn">My account</a></li>
+                <li id="my-account"><a [routerLink]="['/myaccount']" id="my-account-btn">My account</a></li>
                 <li><ws-wishlist-menu></ws-wishlist-menu></li>
                 <li><ws-shoppingcart-menu></ws-shoppingcart-menu></li>
             </ul>

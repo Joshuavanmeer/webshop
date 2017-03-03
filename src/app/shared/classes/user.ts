@@ -5,7 +5,7 @@ export class User {
         private id: string,
         private firstName: string,
         private lastName: string,
-        private streetName: string,
+        private street: string,
         private streetNumber: number,
         private city: string,
         private phoneNumber: string
@@ -17,7 +17,7 @@ export class User {
             return {
                 firstName: this.firstName,
                 lastName: this.lastName,
-                streetName: this.streetName,
+                street: this.street,
                 streetNumber: this.streetNumber,
                 city: this.city,
                 phoneNumber: this.phoneNumber

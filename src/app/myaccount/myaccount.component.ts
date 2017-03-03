@@ -37,12 +37,36 @@ export class MyaccountComponent implements OnInit {
 
     private buildForm(): void {
         this.myAccountForm = this.formBuilder.group({
-            firstName: ['', Validators.required],
-            lastName: ['', Validators.required],
-            streetName: ['', Validators.required],
-            streetNumber: ['', Validators.required],
-            city: ['', Validators.required],
-            phoneNumber: ['', Validators.required]
+            firstName: ['', [
+                Validators.required,
+                Validators.pattern('[a-zA-Z ]*')
+                ]
+            ],
+            lastName: ['', [
+                Validators.required,
+                Validators.pattern('[a-zA-Z ]*')
+                ]
+            ],
+            street: ['', [
+                Validators.required,
+                Validators.pattern('[a-zA-Z ]*')
+                ]
+            ],
+            streetNumber: ['', [
+                Validators.required,
+                Validators.pattern('^[0-9]*$')
+                ]
+            ],
+            city: ['', [
+                Validators.required,
+                Validators.pattern('[a-zA-Z ]*')
+                ]
+            ],
+            phoneNumber: ['', [
+                Validators.required,
+                Validators.pattern('^[0-9]*$')
+                ]
+            ]
         });
     }
 
@@ -52,7 +76,7 @@ export class MyaccountComponent implements OnInit {
         this.myAccountForm.setValue({
             firstName: this.userData.firstName,
             lastName: this.userData.lastName,
-            streetName: this.userData.streetName,
+            street: this.userData.street,
             streetNumber: this.userData.streetNumber,
             city: this.userData.city,
             phoneNumber: this.userData.phoneNumber
@@ -66,7 +90,7 @@ export class MyaccountComponent implements OnInit {
             this.currentUserService.updateUserDetails({
                 firstName: this.myAccountForm.value.firstName,
                 lastName: this.myAccountForm.value.lastName,
-                streetName: this.myAccountForm.value.streetName,
+                street: this.myAccountForm.value.street,
                 streetNumber: this.myAccountForm.value.streetNumber,
                 city: this.myAccountForm.value.city,
                 phoneNumber: this.myAccountForm.value.phoneNumber
