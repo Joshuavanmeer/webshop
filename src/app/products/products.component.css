@@ -3,11 +3,55 @@ ul {
     flex-flow: row wrap;
 }
 
+
 li {
-    width: 23.125%;
-    margin-right: 2.5%;
+
 }
 
-li:nth-child(4) {
-    margin-right: 0;
+
+@media all and (min-width: 560px) and (max-width: 799px) {
+
+
+    li {
+        width: 47.5%;
+        margin: 0 5% 100px 0;
+    }
+
+    li:nth-child(2n + 2) {
+        margin-right: 0;
+    }
+
+
 }
+
+
+@media all and (min-width: 800px) and (max-width: 1199px) {
+
+    li {
+        width: 30%;
+        margin: 0 5% 100px 0;
+    }
+
+    li:nth-child(3n + 3) {
+        margin-right: 0;
+    }
+
+
+}
+
+
+@media all and (min-width: 1200px) {
+
+    li {
+        width: 23.125%;
+        margin: 0 2.5% 100px 0;
+    }
+
+    li:nth-child(4n + 4) {
+        margin-right: 0;
+    }
+
+
+}
+
+
