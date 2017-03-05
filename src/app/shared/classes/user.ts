@@ -28,6 +28,13 @@ export class User {
         }
     }
 
-    updateDetails () {}
+    updateDetails (obj: any) {
+        this.firstName = obj.firstName;
+        this.lastName = obj.lastName;
+        this.street = obj.street;
+        this.streetNumber = obj.streetNumber;
+        this.city = obj.city;
+        this.phoneNumber = obj.phoneNumber;
+    }
 
 }

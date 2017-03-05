@@ -29,6 +29,8 @@ export class CurrentUserService {
 
 
     updateUserDetails(body: any): void {
+        this.user.updateDetails(body);
+        this.currentUserAction.next(body);
         this.httpService.updateUserDetails(body).subscribe(
             res => {
                 console.log(res);

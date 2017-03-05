@@ -9,6 +9,7 @@ export class HttpService {
 
     private userId: string;
     private usersUrl: string;
+    private userDetailsUrl: string;
     private shoppingCartUrl: string;
     private wishListUrl: string;
     private header: Headers = new Headers({'Content-type': 'application/json'});
@@ -21,6 +22,7 @@ export class HttpService {
     setUser (id: string) {
         this.userId = id;
         this.usersUrl = `https://ng-webshop.firebaseio.com/users/${this.userId}.json`;
+        this.userDetailsUrl = `https://ng-webshop.firebaseio.com/users/${this.userId}/details.json`;
         this.shoppingCartUrl = `https://ng-webshop.firebaseio.com/users/${this.userId}/shoppingCart`;
         this.wishListUrl = `https://ng-webshop.firebaseio.com/users/${this.userId}/wishList`;
     }
@@ -35,7 +37,7 @@ export class HttpService {
 
 
     updateUserDetails(body: any): any {
-        return this.put(this.usersUrl, body);
+        return this.put(this.userDetailsUrl, body);
     }
 
 

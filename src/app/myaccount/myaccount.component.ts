@@ -1,6 +1,7 @@
 import {Component, OnInit, style, state, animate, transition, trigger } from '@angular/core';
 import { CurrentUserService } from "../shared/services/current-user.service";
 import { FormBuilder, Validators, FormGroup } from "@angular/forms";
+import { Router } from "@angular/router";
 import 'rxjs/Rx';
 
 @Component({
@@ -96,13 +97,15 @@ export class MyaccountComponent implements OnInit {
                 phoneNumber: this.myAccountForm.value.phoneNumber
             });
         }
+        this.router.navigate(['/']);
     }
 
 
 
     constructor(
         private currentUserService: CurrentUserService,
-        private formBuilder: FormBuilder
+        private formBuilder: FormBuilder,
+        private router: Router
     ) { }
 
 
