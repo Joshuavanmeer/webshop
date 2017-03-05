@@ -55,7 +55,6 @@ export class CurrentUserService {
             res => {
                 product.setRecordId(res.name);
                 this.wishList.addProduct(product);
-                console.log(this.wishList);
             }
         );
         this.wishListAction.next({ id: product.id, action: 'add' });
@@ -108,17 +107,17 @@ export class CurrentUserService {
             res => {
                 this.user = new User(
                     '-Kd0DbIcXZJgKajr99Dw',
-                    res.firstName,
-                    res.lastName,
-                    res.street,
-                    res.streetNumber,
-                    res.city,
-                    res.phoneNumber
+                    res.details.firstName,
+                    res.details.lastName,
+                    res.details.street,
+                    res.details.streetNumber,
+                    res.details.city,
+                    res.details.phoneNumber
                 );
                 this.wishList.populateList(res.wishList);
                 this.shoppingCart.populateList(res.shoppingCart);
                 this.currentUserAction.next(this.user.getDetails());
-                console.log('currentUserService Loaded')
+                console.log('currentUserService Loaded', res)
                 this.asyncData.next(null);
             }
         );

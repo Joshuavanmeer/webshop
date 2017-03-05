@@ -1,4 +1,10 @@
-<button class="add-to-wishlist-btn"
-        [ngClass]="{ 'on-wishlist': onWishList }"
-        (click)="handleClick($event)">Add to wishlist
+
+
+<button
+    class="add-to-wishlist-btn"
+    [ngClass]="{ 'on-wishlist': onWishList }"
+    (click)="handleClick($event)">
+    <div class="button-helper">
+        <i class="icon" [ngClass]="{ 'icon-on-wishlist': onWishList }"></i>
+    </div>
 </button>

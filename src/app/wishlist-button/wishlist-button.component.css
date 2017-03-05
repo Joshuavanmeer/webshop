@@ -1,0 +1,41 @@
+.on-wishlist {
+    background: #ef603a;
+}
+
+button {
+    border: 1px solid #ef603a;
+    height: 45px;
+    width: 45px;
+    background: white;
+    border-radius: 3px;
+}
+
+.button-helper {
+    display: inline-flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    pointer-events: none;
+}
+
+
+
+.icon {
+    display: inline-block;
+    background: url('../../assets/img/icons/wish_normal.svg');
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    margin: 2px 0 0;
+}
+
+.icon-on-wishlist {
+    background: url('../../assets/img/icons/wish_active.svg');
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+}
+
+
+* {
+    transition: all .1s;
+}

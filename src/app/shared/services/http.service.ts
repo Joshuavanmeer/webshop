@@ -20,7 +20,7 @@ export class HttpService {
     // sets and builds urls for service to connect to db
     setUser (id: string) {
         this.userId = id;
-        this.usersUrl = `https://ng-webshop.firebaseio.com/users/${this.userId}/details.json`;
+        this.usersUrl = `https://ng-webshop.firebaseio.com/users/${this.userId}.json`;
         this.shoppingCartUrl = `https://ng-webshop.firebaseio.com/users/${this.userId}/shoppingCart`;
         this.wishListUrl = `https://ng-webshop.firebaseio.com/users/${this.userId}/wishList`;
     }

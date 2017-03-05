@@ -4,13 +4,7 @@ import { Input, Output } from "@angular/core/src/metadata/directives";
 @Component({
     selector: 'ws-wishlist-button',
     templateUrl: './wishlist-button.component.html',
-    styles: [`
-        
-        .on-wishlist {
-            background: yellow;
-        }
-        
-    `]
+    styleUrls: ['./wishlist-button.component.css']
 })
 export class WishListButtonComponent implements OnInit {
 
@@ -21,6 +15,7 @@ export class WishListButtonComponent implements OnInit {
 
 
     private handleClick(ev): void {
+        console.log('handleCLick')
         const target = ev.target;
         if (target.classList.contains('add-to-wishlist-btn')) {
             if (!this.onWishList) {
