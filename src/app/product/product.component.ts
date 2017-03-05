@@ -52,8 +52,10 @@ export class ProductComponent implements OnInit {
 
     ngOnInit() {
 
-        this.inShoppingCart = this.currentUserService.itemOnList('shoppingCart', this.productDetails.id);
-        this.onWishList = this.currentUserService.itemOnList('wishList', this.productDetails.id);
+        this.currentUserService.asyncDataReady().subscribe(()=> {
+            this.inShoppingCart = this.currentUserService.itemOnList('shoppingCart', this.productDetails.id);
+            this.onWishList = this.currentUserService.itemOnList('wishList', this.productDetails.id);
+        })
 
         this.shoppingCartAction = this.currentUserService.shoppingCartAction.subscribe(res => {
             if (res) {
