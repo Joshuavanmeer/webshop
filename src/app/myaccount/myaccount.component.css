@@ -24,6 +24,11 @@ section {
     flex-flow: column nowrap;
 }
 
+button {
+    padding: 0 45px;
+    margin-top: 20px;
+}
+
 
 
 

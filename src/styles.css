@@ -94,6 +94,12 @@ button {
     font-family: 'Dosis';
     cursor: pointer;
     font-size: 1.6rem;
+    background: #17baa9;
+    color: white;
+    height: 45px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 3px;
 }
 
 
