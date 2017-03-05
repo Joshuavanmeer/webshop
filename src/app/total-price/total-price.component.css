@@ -1,0 +1,20 @@
+section {
+    box-shadow: -2px 2px 5px rgba(0,0,0,.2);
+}
+
+div {
+    display: flex;
+    flex-flow: row nowrap;
+    border-top: 1px solid #cfcfcf;
+    padding: 20px 0 0;
+}
+
+h5 {
+    width: 210px;
+}
+
+.price {
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+}

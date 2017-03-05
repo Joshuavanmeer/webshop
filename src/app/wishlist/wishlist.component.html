@@ -1,5 +1,10 @@
+<h1 class="title">Your wishlist</h1>
+
+<div *ngIf="products.length === 0">
+    <h3>You have no items on your wishlist yet</h3>
+</div>
 <ul>
-    <li class="product-container" *ngFor="let product of products;">
+    <li *ngFor="let product of products;">
         <ws-product [productDetails]="product"></ws-product>
     </li>
 </ul>

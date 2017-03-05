@@ -1,0 +1,29 @@
+div {
+    background: #f7f7f7;
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h3 {
+    color: darkgrey;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+ul {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+li {
+    width: 25%;
+}
+
+li img {
+    width: 100px;
+}

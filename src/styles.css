@@ -140,6 +140,7 @@ p {
 
 .intro {
     text-overflow: ellipsis;
+    min-height: 100px;
 }
 
 
@@ -149,6 +150,15 @@ p {
     font-family: 'Dosis', sans-serif;
     font-weight: 200 ;
     margin: 40px 0;
+}
+
+
+.price-tag-medium {
+    font-size: 2rem;
+    color: #323a38;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400 ;
+    margin: 0 0 20px;
 }
 
 

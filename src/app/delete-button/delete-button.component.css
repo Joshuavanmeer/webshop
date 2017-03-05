@@ -1,0 +1,8 @@
+.delete-btn {
+    color: #e20c0c;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+    cursor: pointer;
+}

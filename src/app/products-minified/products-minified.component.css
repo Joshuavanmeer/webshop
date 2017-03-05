@@ -1,0 +1,15 @@
+.helper {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+h5 {
+    width: 210px;
+}
+
+.price {
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+

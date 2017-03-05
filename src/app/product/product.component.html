@@ -6,7 +6,7 @@
         <h3 class="title-medium">{{productDetails.name}}</h3>
         <p class="product-description intro">{{productDetails.desc | truncate : 90}}</p>
     </a>
-    <p class="price">{{productDetails.price}}</p>
+    <p class="price-tag-medium">€ {{productDetails.price}}</p>
     <ws-shoppingcart-button (addToShoppingCart)="addToShoppingCart($event)" (removeFromShoppingCart)="removeFromShoppingCart()" [inShoppingCart]="inShoppingCart"></ws-shoppingcart-button>
     <ws-wishlist-button (addToWishList)="addToWishList($event)" (removeFromWishList)="removeFromWishList()" [onWishList]="onWishList"></ws-wishlist-button>
 </div>
