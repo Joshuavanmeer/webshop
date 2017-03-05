@@ -33,6 +33,8 @@ export class MyaccountComponent implements OnInit {
     private myAccountForm: FormGroup;
     private userData: any;
     private formReady: boolean = false;
+    private processingForm: boolean = false;
+    private processingMessage: string = 'Information successfully changed, redirecting you to home...';
 
 
 
@@ -96,8 +98,18 @@ export class MyaccountComponent implements OnInit {
                 city: this.myAccountForm.value.city,
                 phoneNumber: this.myAccountForm.value.phoneNumber
             });
+            this.processForm();
         }
-        this.router.navigate(['/']);
+    }
+
+
+
+    private processForm(): void {
+        this.processingForm = true;
+        setTimeout(()=> {
+            this.processingForm = false;
+            this.router.navigate(['/']);
+        }, 3000)
     }
 
 

@@ -1,5 +1,5 @@
 <section>
-
+    <ws-modal-timer  [@errorMsg]  *ngIf="processingForm" [message]="processingMessage"></ws-modal-timer>
     <h1 class="title">My account details</h1>
 
     <form (ngSubmit)="submitForm()" [formGroup]="myAccountForm" autocomplete="off" novalidate>
